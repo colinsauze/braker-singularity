@@ -17,7 +17,8 @@ echo 'export PATH=/gm_et_linux_64/gmes_petap:$PATH' >>$SINGULARITY_ENVIRONMENT
 echo 'export LANG=C' >>$SINGULARITY_ENVIRONMENT
 cpan App::cpanminus
 
-cpanm YAML File::Spec::Functions Hash::Merge List::Util Logger::Simple Module::Load::Conditional Parallel::ForkManager POSIX Scalar::Util::Numeric File::Which
+cpanm YAML File::Spec::Functions Hash::Merge List::Util Logger::Simple /
+  Module::Load::Conditional Parallel::ForkManager POSIX Scalar::Util::Numeric File::Which
 
 apt-get install -y ncbi-blast+ bamtools python3-biopython
 
@@ -26,4 +27,6 @@ wget https://github.com/Gaius-Augustus/BRAKER/archive/v2.1.2.tar.gz
 
 tar xvf v2.1.2.tar.gz
 rm v2.1.2.tar.gz
-echo 'export PATH=/BRAKER-2.1.2/scripts:$PATH' >>$SINGULARITY_ENVIRONMENT
+echo 'export PATH=/augustus/scripts:/BRAKER-2.1.2/scripts:$PATH' >>$SINGULARITY_ENVIRONMENT
+echo 'export AUGUSTUS_SCRIPTS_PATH=/augustus/scripts' >>$SINGULARITY_ENVIRONMENT
+echo 'export AUGUSTUS_BIN_PATH=/augustus/bin' >>$SINGULARITY_ENVIRONMENT
