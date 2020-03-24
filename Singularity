@@ -26,10 +26,11 @@ apt-get install -y ncbi-blast+ bamtools python3-biopython
 
 #Install braker and set required variables
 cd /
-wget https://github.com/Gaius-Augustus/BRAKER/archive/v2.1.2.tar.gz
+#wget https://github.com/Gaius-Augustus/BRAKER/archive/v2.1.2.tar.gz
+wget https://github.com/colinsauze/BRAKER/archive/v2.1.5-slurm.tar.gz
 
-tar xvf v2.1.2.tar.gz
-rm v2.1.2.tar.gz
-echo 'export PATH=/augustus/scripts:/BRAKER-2.1.2/scripts:$PATH' >>$SINGULARITY_ENVIRONMENT
+tar xvf v2.1.5-slurm.tar.gz
+rm v2.1.5-slurm.tar.gz
+echo 'export PATH=/augustus/scripts:/BRAKER-2.1.5-slurm/scripts:$PATH' >>$SINGULARITY_ENVIRONMENT
 echo 'export AUGUSTUS_SCRIPTS_PATH=/augustus/scripts' >>$SINGULARITY_ENVIRONMENT
 echo 'export AUGUSTUS_BIN_PATH=/augustus/bin' >>$SINGULARITY_ENVIRONMENT
